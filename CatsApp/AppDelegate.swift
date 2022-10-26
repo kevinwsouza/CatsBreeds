@@ -10,10 +10,20 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
+    var coordinator: Coordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        UINavigationBar.appearance().barTintColor = UIColor(red: 0.2, green: 0.8, blue: 0.3, alpha: 1)
+        
+        self.window = UIWindow.init()
+        self.window?.bounds = UIScreen.main.bounds
+        let navigation = UINavigationController()
+        self.coordinator = HomeScreenCoordinator(navigationController: navigation)
+        self.coordinator?.start()
+        self.window?.rootViewController = navigation
+        self.window?.makeKeyAndVisible()
         return true
     }
 
