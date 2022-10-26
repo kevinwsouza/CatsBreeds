@@ -41,5 +41,8 @@ class HomeScreenViewModel {
         
     }
     
+    func createCells(with cats: Cats) {
+        
+    }
     
 }

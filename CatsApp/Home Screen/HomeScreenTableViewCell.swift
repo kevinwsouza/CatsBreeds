@@ -26,7 +26,13 @@ class HomeScreenTableViewCell: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+    private let imageViewTrailing: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "chevron")
+        image.tintColor = .black
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
     
     
     //MARK: - setup constraints
@@ -48,7 +54,8 @@ class HomeScreenTableViewCell: UIView {
             labelCatBreed.centerYAnchor.constraint(equalTo: viewCell.centerYAnchor),
             labelCatBreed.centerXAnchor.constraint(equalTo: viewCell.centerXAnchor),
             
-            
+            imageViewTrailing.bottomAnchor.constraint(equalTo: viewCell.bottomAnchor, constant: -45),
+            imageViewTrailing.trailingAnchor.constraint(equalTo: viewCell.trailingAnchor, constant: -20),
         ])
     }
     
@@ -57,6 +64,7 @@ class HomeScreenTableViewCell: UIView {
         addSubview(viewCell)
         
         viewCell.addSubview(labelCatBreed)
+        viewCell.addSubview(imageViewTrailing)
     }
     
     
