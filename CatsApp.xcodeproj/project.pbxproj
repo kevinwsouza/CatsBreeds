@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		14903E8A2908A618003AD0AB /* HomeScreenWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14903E892908A618003AD0AB /* HomeScreenWorker.swift */; };
-		14903E8C2908A669003AD0AB /* HomeScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14903E8B2908A669003AD0AB /* HomeScreenModel.swift */; };
+		14903E8C2908A669003AD0AB /* CatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14903E8B2908A669003AD0AB /* CatsModel.swift */; };
 		14903E8F29099977003AD0AB /* DetailsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14903E8E29099977003AD0AB /* DetailsScreenViewController.swift */; };
 		14903E9129099984003AD0AB /* DetailsScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14903E9029099984003AD0AB /* DetailsScreenCoordinator.swift */; };
 		14903E932909999D003AD0AB /* DetailsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14903E922909999D003AD0AB /* DetailsScreenView.swift */; };
 		14903E9529099A04003AD0AB /* DetailsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14903E9429099A04003AD0AB /* DetailsScreenViewModel.swift */; };
-		14903E972909C023003AD0AB /* DetailsScreenWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14903E962909C023003AD0AB /* DetailsScreenWorker.swift */; };
+		14903E9B290B3663003AD0AB /* DownloadedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14903E9A290B3663003AD0AB /* DownloadedImage.swift */; };
 		14F2806529076C7200E02CD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F2806429076C7200E02CD7 /* AppDelegate.swift */; };
 		14F2806729076C7200E02CD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F2806629076C7200E02CD7 /* SceneDelegate.swift */; };
 		14F2806929076C7200E02CD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F2806829076C7200E02CD7 /* ViewController.swift */; };
@@ -50,12 +50,12 @@
 
 /* Begin PBXFileReference section */
 		14903E892908A618003AD0AB /* HomeScreenWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenWorker.swift; sourceTree = "<group>"; };
-		14903E8B2908A669003AD0AB /* HomeScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenModel.swift; sourceTree = "<group>"; };
+		14903E8B2908A669003AD0AB /* CatsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsModel.swift; sourceTree = "<group>"; };
 		14903E8E29099977003AD0AB /* DetailsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreenViewController.swift; sourceTree = "<group>"; };
 		14903E9029099984003AD0AB /* DetailsScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreenCoordinator.swift; sourceTree = "<group>"; };
 		14903E922909999D003AD0AB /* DetailsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreenView.swift; sourceTree = "<group>"; };
 		14903E9429099A04003AD0AB /* DetailsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreenViewModel.swift; sourceTree = "<group>"; };
-		14903E962909C023003AD0AB /* DetailsScreenWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreenWorker.swift; sourceTree = "<group>"; };
+		14903E9A290B3663003AD0AB /* DownloadedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadedImage.swift; sourceTree = "<group>"; };
 		14F2806129076C7200E02CD7 /* CatsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F2806429076C7200E02CD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14F2806629076C7200E02CD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,7 +109,6 @@
 				14903E9029099984003AD0AB /* DetailsScreenCoordinator.swift */,
 				14903E922909999D003AD0AB /* DetailsScreenView.swift */,
 				14903E9429099A04003AD0AB /* DetailsScreenViewModel.swift */,
-				14903E962909C023003AD0AB /* DetailsScreenWorker.swift */,
 			);
 			path = "Details Screen";
 			sourceTree = "<group>";
@@ -139,6 +138,7 @@
 			children = (
 				14F280A029078C9800E02CD7 /* API */,
 				14F2809429076E7700E02CD7 /* Home Screen */,
+				14903E8B2908A669003AD0AB /* CatsModel.swift */,
 				14903E8D290918A4003AD0AB /* Details Screen */,
 				14F2809B29076FB200E02CD7 /* Protocols */,
 				14F2806429076C7200E02CD7 /* AppDelegate.swift */,
@@ -176,7 +176,6 @@
 				14F2809729076EFF00E02CD7 /* HomeScreenViewModel.swift */,
 				14F2809E2907721E00E02CD7 /* HomeScreenTableViewCell.swift */,
 				14903E892908A618003AD0AB /* HomeScreenWorker.swift */,
-				14903E8B2908A669003AD0AB /* HomeScreenModel.swift */,
 			);
 			path = "Home Screen";
 			sourceTree = "<group>";
@@ -186,6 +185,7 @@
 			children = (
 				14F2809C29076FBE00E02CD7 /* Coordinator.swift */,
 				14F280A429078D6A00E02CD7 /* ViewCodable.swift */,
+				14903E9A290B3663003AD0AB /* DownloadedImage.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -330,11 +330,11 @@
 			files = (
 				14F2806929076C7200E02CD7 /* ViewController.swift in Sources */,
 				14F2806529076C7200E02CD7 /* AppDelegate.swift in Sources */,
-				14903E8C2908A669003AD0AB /* HomeScreenModel.swift in Sources */,
+				14903E8C2908A669003AD0AB /* CatsModel.swift in Sources */,
+				14903E9B290B3663003AD0AB /* DownloadedImage.swift in Sources */,
 				14903E9129099984003AD0AB /* DetailsScreenCoordinator.swift in Sources */,
 				14903E8A2908A618003AD0AB /* HomeScreenWorker.swift in Sources */,
 				14F2806729076C7200E02CD7 /* SceneDelegate.swift in Sources */,
-				14903E972909C023003AD0AB /* DetailsScreenWorker.swift in Sources */,
 				14903E8F29099977003AD0AB /* DetailsScreenViewController.swift in Sources */,
 				14903E932909999D003AD0AB /* DetailsScreenView.swift in Sources */,
 				14F2809F2907721E00E02CD7 /* HomeScreenTableViewCell.swift in Sources */,
@@ -518,7 +518,6 @@
 				INFOPLIST_FILE = CatsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -546,7 +545,6 @@
 				INFOPLIST_FILE = CatsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

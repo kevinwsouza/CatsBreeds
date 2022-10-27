@@ -18,6 +18,8 @@ class DetailsScreenView: UIView {
     var labelCatBreed: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "teste"
+        label.tintColor = .black
         return label
     }()
     var labeldescription: UILabel = {
@@ -49,7 +51,8 @@ class DetailsScreenView: UIView {
             imagecat.heightAnchor.constraint(equalToConstant: 150),
             imagecat.widthAnchor.constraint(equalToConstant: 150),
             
-            labelCatBreed.topAnchor.constraint(equalTo: imagecat.bottomAnchor, constant: 20),
+            labelCatBreed.centerYAnchor.constraint(equalTo: centerYAnchor),
+            //labelCatBreed.topAnchor.constraint(equalTo: imagecat.bottomAnchor, constant: 20),
             labelCatBreed.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             labeldescription.topAnchor.constraint(equalTo: labelCatBreed.bottomAnchor, constant: 20),

@@ -22,4 +22,8 @@ final class HomeScreenCoordinator: Coordinator {
         
         navigationController.pushViewController(viewController, animated: true)
     }
+    
+    func goToDetailsScreen() {
+        DetailsScreenCoordinator(navigationController: self.navigationController).start()
+    }
 }

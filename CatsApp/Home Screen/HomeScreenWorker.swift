@@ -9,15 +9,15 @@ import Foundation
 
 class HomeScreenWorker {
     
-    let endpoint = "breeds"
-    
-    func getCats(onComplete: @escaping ([Cats]?) -> Void) {
-        Rest.loadAPI(json: nil, header: nil, endPointPath: endpoint, HTTPMethod: .GET) { (data, error) in
+    func getCats(onComplete: @escaping (Cats?) -> Void) {
+        let endpoint = "breeds"
+        
+        Rest.loadAPI(json: nil, header: ApiKey.key, endPointPath: endpoint, HTTPMethod: .GET) { (data, error) in
             do {
                 if let data = data {
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .secondsSince1970
-                    let cats = try decoder.decode([Cats].self, from: data)
+                    let cats = try decoder.decode(Cats.self, from: data)
                     onComplete(cats)
                 } else {
                     onComplete(nil)

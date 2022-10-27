@@ -12,7 +12,6 @@ class DetailsScreenViewModel {
     let coordinator: DetailsScreenCoordinator
     
     
-    
     init(coordinator: DetailsScreenCoordinator){
         self.coordinator = coordinator
     }

@@ -14,10 +14,14 @@ enum HTTPMethod {
     case POST
 }
 
+struct ApiKey {
+    static let key = "c0f41c38-f785-480d-9c66-ae2359cbaea3"
+}
+
 //MARK: - REST API
 
 class Rest {
-    static let basePath = "https://docs.thecatapi.com/"
+    static let basePath = "https://api.thecatapi.com/v1/"
     private static let configuration: URLSessionConfiguration = {
         let config = URLSessionConfiguration.default
         config.timeoutIntervalForResource = 10.0
@@ -29,7 +33,7 @@ class Rest {
     
     //MARK: - load API
     
-    class func loadAPI(json: Data?, header:Int?,endPointPath: String,HTTPMethod: HTTPMethod , onComplete: @escaping (Data?, Error?) -> Void){
+    class func loadAPI(json: Data?, header:String?,endPointPath: String,HTTPMethod: HTTPMethod , onComplete: @escaping (Data?, Error?) -> Void){
         
         let endPointPath = endPointPath
         let finalUrl = "\(basePath)\(endPointPath)"
@@ -37,6 +41,7 @@ class Rest {
         guard let url = URL(string: finalUrl ) else {return}
         
         var request = URLRequest(url: url)
+        request.addValue(ApiKey.key, forHTTPHeaderField: "x-api-key")
         switch HTTPMethod {
         case .GET:
             let httpMethod: String = "GET"

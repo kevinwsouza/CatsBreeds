@@ -25,7 +25,7 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     
     //MARK:  - TableView
     
-    private var HomeTableView: UITableView = {
+    private var homeTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .gray
         tableView.showsVerticalScrollIndicator = false
@@ -38,14 +38,12 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? HomeScreenTableViewCell else {
             return UITableViewCell()
         }
-        cell.setup()
-        guard let cats = viewModel.cats[indexPath.row] else { return cell }
-        cell.createCells(with: cats)
+        cell.configure(breed: viewModel.cats[indexPath.row].name ?? "")
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.cats.first?.count ?? 0
+        return viewModel.cats.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -53,16 +51,16 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        130
+        80
     }
     
-    func HomeTableViewConfig() {
-        HomeTableView.delegate = self
-        HomeTableView.dataSource = self
-        HomeTableView.register(HomeScreenTableViewCell.self, forCellReuseIdentifier: "cell")
-        HomeTableView.backgroundColor = .white
-        HomeTableView.separatorColor = .none
-        HomeTableView.tableFooterView = UIView()
+    func homeTableViewConfig() {
+        homeTableView.delegate = self
+        homeTableView.dataSource = self
+        homeTableView.register(HomeScreenTableViewCell.self, forCellReuseIdentifier: "cell")
+        homeTableView.backgroundColor = .white
+        homeTableView.separatorColor = .none
+        homeTableView.tableFooterView = UIView()
     }
     
     
@@ -71,8 +69,19 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        HomeTableViewConfig()
+        view.backgroundColor = .gray
+        homeTableViewConfig()
         setup()
+        viewModel.getCats(onComplete: { success in
+            DispatchQueue.main.async { [weak self] in
+                if success {
+                    self?.homeTableView.reloadData()
+                } else {
+                    
+                }
+            }
+        })
+        navigationBar()
     }
     
     func navigationBar() {
@@ -91,11 +100,22 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
 
 extension HomeScreenViewController: ViewCodable {
     func constraintsSetup() {
+        view.addSubview(homeTableView)
+        
+        homeTableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            
+            homeTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            homeTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            homeTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            homeTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
         
     }
-    
+
     func viewSetup() {
-        
+
     }
 }
 

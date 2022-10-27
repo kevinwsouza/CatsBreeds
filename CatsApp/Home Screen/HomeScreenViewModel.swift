@@ -11,7 +11,7 @@ class HomeScreenViewModel {
     
     let coordinator: HomeScreenCoordinator
     let worker: HomeScreenWorker
-    var cats: [Cats] = []
+    var cats: Cats = []
     
     
     //MARK: - init
@@ -37,12 +37,10 @@ class HomeScreenViewModel {
     //MARK: - Details Events
     
     func didSelect(row: Int) {
-        
+        guard let catsName = cats.first?.name else {return}
+        guard let catsTemperament = cats.first?.temperament else { return }
+        //let detail = CatsInfo(name: catsName, temperament: catsTemperament)
+        coordinator.goToDetailsScreen()
         
     }
-    
-    func createCells(with cats: Cats) {
-        
-    }
-    
 }
