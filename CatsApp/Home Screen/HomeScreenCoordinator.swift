@@ -12,6 +12,7 @@ final class HomeScreenCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
@@ -23,7 +24,7 @@ final class HomeScreenCoordinator: Coordinator {
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    func goToDetailsScreen() {
-        DetailsScreenCoordinator(navigationController: self.navigationController).start()
+    func goToDetailsScreen(model: Cat) {
+        DetailsScreenCoordinator(navigationController: self.navigationController, model: model).start()
     }
 }

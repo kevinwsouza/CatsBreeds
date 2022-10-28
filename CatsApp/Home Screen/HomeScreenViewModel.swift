@@ -36,11 +36,7 @@ class HomeScreenViewModel {
     
     //MARK: - Details Events
     
-    func didSelect(row: Int) {
-        guard let catsName = cats.first?.name else {return}
-        guard let catsTemperament = cats.first?.temperament else { return }
-        //let detail = CatsInfo(name: catsName, temperament: catsTemperament)
-        coordinator.goToDetailsScreen()
-        
+    func didSelect(index: Int) {
+        coordinator.goToDetailsScreen(model: cats[index])
     }
 }

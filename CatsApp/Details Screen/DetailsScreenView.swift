@@ -10,25 +10,25 @@ import UIKit
 
 class DetailsScreenView: UIView {
     
+    var labelTitle: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 20)
+        label.text = "MORE INFO"
+        return label
+    }()
+    
     var imagecat: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
-    var labelCatBreed: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "teste"
-        label.tintColor = .black
-        return label
-    }()
-    var labeldescription: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    
     var labeltemperament: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -46,38 +46,26 @@ class DetailsScreenView: UIView {
     private func setupContrains() {
         NSLayoutConstraint.activate([
             
-            imagecat.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 20),
+            labelTitle.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 20),
+            labelTitle.centerXAnchor.constraint(equalTo: centerXAnchor),
+            
+            imagecat.topAnchor.constraint(equalTo: labelTitle.bottomAnchor, constant: 20),
             imagecat.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imagecat.heightAnchor.constraint(equalToConstant: 150),
-            imagecat.widthAnchor.constraint(equalToConstant: 150),
+            imagecat.heightAnchor.constraint(equalToConstant: 250),
+            imagecat.widthAnchor.constraint(equalToConstant: 300),
             
-            labelCatBreed.centerYAnchor.constraint(equalTo: centerYAnchor),
-            //labelCatBreed.topAnchor.constraint(equalTo: imagecat.bottomAnchor, constant: 20),
-            labelCatBreed.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
-            labeldescription.topAnchor.constraint(equalTo: labelCatBreed.bottomAnchor, constant: 20),
-            labeldescription.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
-            labeltemperament.topAnchor.constraint(equalTo: labeldescription.bottomAnchor, constant: 20),
-            labeltemperament.centerXAnchor.constraint(equalTo: centerXAnchor),
+            labeltemperament.topAnchor.constraint(equalTo: imagecat.bottomAnchor, constant: 20),
+            labeltemperament.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor, constant: 20),
+            labeltemperament.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor, constant: -20),
         ])
     }
     
     
     private func setupBinds() {
         
+        addSubview(labelTitle)
         addSubview(imagecat)
-        addSubview(labelCatBreed)
-        addSubview(labeldescription)
         addSubview(labeltemperament)
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
 }

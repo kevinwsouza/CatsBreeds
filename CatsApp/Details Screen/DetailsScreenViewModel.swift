@@ -10,11 +10,13 @@ import Foundation
 class DetailsScreenViewModel {
     
     let coordinator: DetailsScreenCoordinator
+    let model: Cat
+ 
+    //MARK: - init
     
-    
-    init(coordinator: DetailsScreenCoordinator){
+    init(coordinator: DetailsScreenCoordinator, model: Cat){
         self.coordinator = coordinator
+        self.model = model
     }
-    
-    
+  
 }

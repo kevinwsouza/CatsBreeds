@@ -16,7 +16,7 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     
     init(viewModel: HomeScreenViewModel){
         self.viewModel = viewModel
-        super .init(nibName: nil, bundle: nil)
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -47,7 +47,7 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.didSelect(row: indexPath.row)
+        viewModel.didSelect(index: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -87,7 +87,7 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     func navigationBar() {
         self.navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.tintColor = .black
-        navigationItem.title = "Cats Breeds"
+        navigationItem.title = "Cat Breeds"
         let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black,
                               NSAttributedString.Key.font: UIFont(name: "Helvetica Oblique", size: 21)
         ]

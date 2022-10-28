@@ -11,13 +11,15 @@ import UIKit
 final class DetailsScreenCoordinator: Coordinator {
     
     var navigationController: UINavigationController
+    var model: Cat
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, model: Cat) {
         self.navigationController = navigationController
+        self.model = model
     }
     
     func start() {
-        let viewModel = DetailsScreenViewModel(coordinator: self)
+        let viewModel = DetailsScreenViewModel(coordinator: self, model: model)
         let viewController = DetailsScreenViewController(viewModel:  viewModel)
         
         navigationController.pushViewController(viewController, animated: true)

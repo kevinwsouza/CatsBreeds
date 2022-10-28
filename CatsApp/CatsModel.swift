@@ -6,9 +6,8 @@
 //
 
 import Foundation
+
 typealias Cats = [Cat]
-
-
 
 struct Cat: Codable {
     var id: String?
@@ -49,6 +48,5 @@ struct Image: Codable {
     let height: Int?
     let url: String?
 }
-
 
 
